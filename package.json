@@ -1,6 +1,6 @@
 {
   "name": "cssbench",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Benchmark css minifiers",
   "main": "bin/app.js",
   "bin": {
@@ -24,7 +24,8 @@
     "css",
     "clean-css",
     "cssshrink",
-    "csso"
+    "csso",
+    "uglifycss"
   ],
   "files": [
     "development",
