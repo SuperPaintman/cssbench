@@ -1,4 +1,5 @@
 # Benchmark css minifiers
+
 Simple benchmark for CSS minifiers:
 * [cssshrink](https://www.npmjs.com/package/cssshrink)
 * [clean-css](https://www.npmjs.com/package/clean-css)
@@ -48,8 +49,8 @@ cssbench style.less -s
 cssbench style.styl -s
 
 # save to a file =>
-# style-cleancss.css    <- cssshrink
-# style-cssshrink.css   <- clean-css
+# style-cleancss.css    <- clean-css
+# style-cssshrink.css   <- cssshrink
 # style-csso.css        <- csso
 ```
 
