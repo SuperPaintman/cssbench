@@ -1,6 +1,6 @@
 {
   "name": "cssbench",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Benchmark css minifiers",
   "main": "bin/app.js",
   "bin": {
@@ -60,6 +60,7 @@
     "less": "^2.5.3",
     "minimist": "^1.2.0",
     "node-sass": "^3.4.1",
-    "stylus": "^0.52.4"
+    "stylus": "^0.52.4",
+    "uglifycss": "0.0.18"
   }
 }

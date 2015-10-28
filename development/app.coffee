@@ -7,6 +7,7 @@ chalk       = require 'chalk'
 CleanCSS    = require 'clean-css'
 cssshrink   = require 'cssshrink'
 csso        = require 'csso'
+uglifycss   = require 'uglifycss'
 
 sass        = require 'node-sass'
 less        = require 'less'
@@ -133,6 +134,22 @@ module.exports = (filename, opts)->
                             time:   delta
                         }
 
+                    uglifycss: (cb)->
+                        bench = new BenchMark()
+
+                        bench.start()
+                        minified = uglifycss.processString(css)
+                        delta = bench.end()
+
+                        if options.saveRender
+                            fs.writeFile "#{parsedFilename.name}-uglifycss.css", minified
+
+                        fileLength = minified.length
+                        cb null, {
+                            length: fileLength
+                            time:   delta
+                        }
+
             }, (err, res)-> callback err, res
     ], (err, res)->
         if err then console.log "[#{ chalk.red "ERROR" }]: ", err.message
@@ -160,6 +177,10 @@ module.exports = (filename, opts)->
                 when 'csso'
                     result.name     = 'Csso'
                     result.color    = 'cyan'
+                    result.percent  = cssVal.length / res.vanilla.length
+                when 'uglifycss'
+                    result.name     = 'Uglifycss'
+                    result.color    = 'magenta'
                     result.percent  = cssVal.length / res.vanilla.length
 
             results.push result

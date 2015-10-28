@@ -1,4 +1,4 @@
-var BenchMark, CleanCSS, async, chalk, csso, cssshrink, fs, less, path, sass, stylus;
+var BenchMark, CleanCSS, async, chalk, csso, cssshrink, fs, less, path, sass, stylus, uglifycss;
 
 fs = require('fs');
 
@@ -13,6 +13,8 @@ CleanCSS = require('clean-css');
 cssshrink = require('cssshrink');
 
 csso = require('csso');
+
+uglifycss = require('uglifycss');
 
 sass = require('node-sass');
 
@@ -157,6 +159,21 @@ module.exports = function(filename, opts) {
               length: fileLength,
               time: delta
             });
+          },
+          uglifycss: function(cb) {
+            var bench, delta, fileLength, minified;
+            bench = new BenchMark();
+            bench.start();
+            minified = uglifycss.processString(css);
+            delta = bench.end();
+            if (options.saveRender) {
+              fs.writeFile(parsedFilename.name + "-uglifycss.css", minified);
+            }
+            fileLength = minified.length;
+            return cb(null, {
+              length: fileLength,
+              time: delta
+            });
           }
         }, function(err, res) {
           return callback(err, res);
@@ -193,6 +210,11 @@ module.exports = function(filename, opts) {
         case 'csso':
           result.name = 'Csso';
           result.color = 'cyan';
+          result.percent = cssVal.length / res.vanilla.length;
+          break;
+        case 'uglifycss':
+          result.name = 'Uglifycss';
+          result.color = 'magenta';
           result.percent = cssVal.length / res.vanilla.length;
       }
       results.push(result);

@@ -4,6 +4,7 @@ Simple benchmark for CSS minifiers:
 * [cssshrink](https://www.npmjs.com/package/cssshrink)
 * [clean-css](https://www.npmjs.com/package/clean-css)
 * [csso](https://www.npmjs.com/package/csso)
+* [uglifycss](https://www.npmjs.com/package/uglifycss)
 
 ------------------------------------
 
@@ -92,5 +93,8 @@ coffee -c gulpfile.coffee
 ------------------------------------
 
 ## Changelog
+### 0.2.0 [ `Stable` ]
+* `Add` - benchmark for [uglifycss](https://www.npmjs.com/package/uglifycss) compressor
+
 ### 0.1.0 [ `Stable` ]
 * `Add` - first realise
