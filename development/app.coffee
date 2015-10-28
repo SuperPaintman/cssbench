@@ -169,5 +169,5 @@ module.exports = (filename, opts)->
         for result in results
             console.log "[#{ chalk[ result.color ] result.name }]: \t", 
                         "length: #{ chalk.yellow result.length } \t", 
-                        "compressed: #{ chalk.yellow (100 - result.percent * 100).toFixed 2 }% \t"
+                        "compression: #{ chalk.yellow (100 - result.percent * 100).toFixed 2 }% \t"
                         "time: #{ chalk.yellow result.time }ms"

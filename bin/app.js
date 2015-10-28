@@ -203,7 +203,7 @@ module.exports = function(filename, opts) {
     results1 = [];
     for (i = 0, len = results.length; i < len; i++) {
       result = results[i];
-      results1.push(console.log("[" + (chalk[result.color](result.name)) + "]: \t", "length: " + (chalk.yellow(result.length)) + " \t", "compressed: " + (chalk.yellow((100 - result.percent * 100).toFixed(2))) + "% \t", "time: " + (chalk.yellow(result.time)) + "ms"));
+      results1.push(console.log("[" + (chalk[result.color](result.name)) + "]: \t", "length: " + (chalk.yellow(result.length)) + " \t", "compression: " + (chalk.yellow((100 - result.percent * 100).toFixed(2))) + "% \t", "time: " + (chalk.yellow(result.time)) + "ms"));
     }
     return results1;
   });
