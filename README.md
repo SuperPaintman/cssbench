@@ -5,6 +5,7 @@ Simple benchmark for CSS minifiers:
 * [clean-css](https://www.npmjs.com/package/clean-css)
 * [csso](https://www.npmjs.com/package/csso)
 * [uglifycss](https://www.npmjs.com/package/uglifycss)
+* [cssnano](https://www.npmjs.com/package/cssnano)
 
 ------------------------------------
 
@@ -93,6 +94,11 @@ coffee -c gulpfile.coffee
 ------------------------------------
 
 ## Changelog
+### 0.3.0 [ `Stable` ]
+* `Add` - benchmark for [cssnano](https://www.npmjs.com/package/cssnano) compressor
+* `Add` - gziped size comparison
+* `Add` - run standalone `app.js` file, to benchmark on `bootstrap 3`, `foundation 6` and `skeleton`
+
 ### 0.2.0 [ `Stable` ]
 * `Add` - benchmark for [uglifycss](https://www.npmjs.com/package/uglifycss) compressor
 

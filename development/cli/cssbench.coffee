@@ -6,5 +6,5 @@ cssbench        = require '../app.js'
 argv            = require('minimist') process.argv[2...]
 
 cssbench argv['_'][0], {
-    saveRender: argv['s']? ? true or false
+    saveRender: if argv['s'] then true else false
 }
